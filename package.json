@@ -58,9 +58,9 @@
   },
   "lint-staged": {
     "./*.{json,yaml,md}": "prettier --check",
-    "./*.{js,jsx}": "eslint",
+    "./*.{js,jsx,ts,tsx}": "eslint",
     "src/**/*.{json,yaml,md}": "prettier --check",
-    "src/**/*.{js,jsx}": "eslint"
+    "src/**/*.{js,jsx,ts,tsx}": "eslint"
   },
   "husky": {
     "hooks": {
