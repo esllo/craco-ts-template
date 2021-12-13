@@ -5,19 +5,30 @@
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@emotion/react": "^11.7.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "husky": "^4.3.8",
+    "lint-staged": "^12.1.2",
+    "serve": "^13.0.2"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "serve": "server -s build",
+    "local": "craco build && serve -s build",
+    "test": "craco test",
+    "test:ci": "npm test -- --bail --watchAll=false --silent --ci",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src ",
+    "prettier": "prettier \"**/*.{json,yaml,md}\" --check",
+    "prettier:fix": "prettier \"**/*.{json,yaml,md}\" --write"
   },
   "eslintConfig": {
     "extends": [
@@ -47,9 +58,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "devDependencies": {
-    "husky": "^7.0.4",
-    "lint-staged": "^12.1.2"
   }
 }
