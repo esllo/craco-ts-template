@@ -23,6 +23,7 @@
     "eslint-plugin-import": "^2.25.3",
     "husky": "^4.3.8",
     "lint-staged": "^12.1.2",
+    "sass": "^1.45.0",
     "serve": "^13.0.2"
   },
   "scripts": {
