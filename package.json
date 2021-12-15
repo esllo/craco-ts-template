@@ -1,5 +1,5 @@
 {
-  "name": "logong2",
+  "name": "logong",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,10 +19,21 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "8.2.0",
+    "eslint-config-airbnb": "19.0.2",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-react-hooks": "4.3.0",
     "husky": "^4.3.8",
     "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1",
     "sass": "^1.45.0",
     "serve": "^13.0.2"
   },
@@ -35,31 +46,20 @@
     "test:ci": "npm test -- --bail --watchAll=false --silent --ci",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src ",
-    "prettier": "prettier \"**/*.{json,yaml,md}\" --check",
-    "prettier:fix": "prettier \"**/*.{json,yaml,md}\" --write"
+    "prettier": "prettier \"**/*.{json,yaml}\" --check",
+    "prettier:fix": "prettier \"**/*.{json,yaml}\" --write"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app", "react-app/jest"]
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   },
   "lint-staged": {
-    "./*.{json,yaml,md}": "prettier --check",
+    "./*.{json,yaml}": "prettier --check",
     "./*.{js,jsx,ts,tsx}": "eslint",
-    "src/**/*.{json,yaml,md}": "prettier --check",
+    "src/**/*.{json,yaml}": "prettier --check",
     "src/**/*.{js,jsx,ts,tsx}": "eslint"
   },
   "husky": {
