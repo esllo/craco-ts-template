@@ -1,8 +1,5 @@
 {
   "extends": "./tsconfig.paths.json",
-  "comilerOptions": {
-    "baseUrl": "src"
-  },
   "include": ["src", "craco.config.js"],
   "exclude": ["node_modules", "**/node_modules/*"],
   "compilerOptions": {
